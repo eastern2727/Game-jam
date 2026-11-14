@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-const SPEED : int = 200
+const SPEED : int = 300
 const GRAVITY : int = 800
 const HARD_HIT : int = 450
 const BLAST_STRENGTH : float = 1.5

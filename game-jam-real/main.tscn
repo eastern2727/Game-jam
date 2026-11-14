@@ -9,8 +9,8 @@
 [ext_resource type="Script" uid="uid://2kweohlmgf7r" path="res://spinny.gd" id="6_272bh"]
 [ext_resource type="Texture2D" uid="uid://c84bwl66ldmj2" path="res://pixil-frame-0 (10).png" id="7_5vw27"]
 [ext_resource type="Script" uid="uid://brq1wcscmx1ql" path="res://floating_platform_h.gd" id="7_272bh"]
+[ext_resource type="Script" uid="uid://dhbgaae6tabvg" path="res://character_body_2d.gd" id="9_efxa6"]
 [ext_resource type="Script" uid="uid://dk2dqec6gnfyc" path="res://floating_platform_v.gd" id="9_kek77"]
-[ext_resource type="Script" uid="uid://dkd7ilwcxwm5y" path="res://restart.gd" id="11_efxa6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
 size = Vector2(1743, 157)
@@ -31,10 +31,10 @@ size = Vector2(769.5, 53.5)
 size = Vector2(70, 352)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7numd"]
-size = Vector2(293, 26)
+size = Vector2(1142.25, 26)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_5s0fj"]
-size = Vector2(53, 447)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p1u0y"]
+size = Vector2(76, 349.25)
 
 [node name="Node2D" type="Node2D" unique_id=2011774588]
 
@@ -63,7 +63,7 @@ texture = ExtResource("7_5vw27")
 script = ExtResource("9_kek77")
 
 [node name="Player" parent="." unique_id=681009790 instance=ExtResource("1_ig7tw")]
-position = Vector2(1485, 253)
+position = Vector2(113, 335)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=2139852630]
 position = Vector2(255, 449)
@@ -135,9 +135,22 @@ offset_top = -25.25
 offset_right = 386.75
 offset_bottom = 40.0
 color = Color(0.5019608, 0.5019608, 0.5019608, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="StaticBody2D" unique_id=525144408]
+position = Vector2(4888, 0)
+shape = SubResource("RectangleShape2D_3gngh")
+
+[node name="ColorRect" type="ColorRect" parent="StaticBody2D/CollisionShape2D10" unique_id=425909863]
+offset_left = -403.25
+offset_top = -25.25
+offset_right = 386.75
+offset_bottom = 40.0
+color = Color(0.5019608, 0.5019608, 0.5019608, 1)
+metadata/_edit_use_anchors_ = true
 
 [node name="CollisionShape2D7" type="CollisionShape2D" parent="StaticBody2D" unique_id=1812468767]
-position = Vector2(3390, -150)
+position = Vector2(3409, 155)
 shape = SubResource("RectangleShape2D_fcnqv")
 
 [node name="ColorRect" type="ColorRect" parent="StaticBody2D/CollisionShape2D7" unique_id=1037097518]
@@ -145,26 +158,59 @@ offset_left = -33.0
 offset_top = -178.0
 offset_right = 40.0
 offset_bottom = 187.0
+metadata/_edit_use_anchors_ = true
 
 [node name="CollisionShape2D8" type="CollisionShape2D" parent="StaticBody2D" unique_id=1046377415]
-position = Vector2(3505, -313)
+position = Vector2(3986.875, 331)
 shape = SubResource("RectangleShape2D_7numd")
 
 [node name="ColorRect" type="ColorRect" parent="StaticBody2D/CollisionShape2D8" unique_id=898868227]
-offset_left = -147.0
-offset_top = -17.0
-offset_right = 146.0
-offset_bottom = 23.0
+offset_left = -576.875
+offset_top = -12.0
+offset_right = 567.125
+offset_bottom = 28.0
 
-[node name="RigidBody2D" type="RigidBody2D" parent="." unique_id=296794986]
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="StaticBody2D" unique_id=443374073]
+position = Vector2(4517, 159)
+shape = SubResource("RectangleShape2D_p1u0y")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D" unique_id=1912971014]
-position = Vector2(3264.5, 133)
-shape = SubResource("RectangleShape2D_5s0fj")
+[node name="ColorRect" type="ColorRect" parent="StaticBody2D/CollisionShape2D9" unique_id=2036105170]
+offset_left = -37.0
+offset_top = -183.0
+offset_right = 39.0
+offset_bottom = 173.0
+metadata/_edit_use_anchors_ = true
 
-[node name="Spinny" type="Sprite2D" parent="RigidBody2D" unique_id=1082940939]
-position = Vector2(3266, 123)
+[node name="CollisionShape2D11" type="CollisionShape2D" parent="StaticBody2D" unique_id=586057306]
+position = Vector2(5239, -197)
+shape = SubResource("RectangleShape2D_p1u0y")
+
+[node name="ColorRect" type="ColorRect" parent="StaticBody2D/CollisionShape2D11" unique_id=1920859412]
+offset_left = -37.0
+offset_top = -183.0
+offset_right = 39.0
+offset_bottom = 173.0
+metadata/_edit_use_anchors_ = true
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=11917299]
+position = Vector2(4455, 524)
+script = ExtResource("9_efxa6")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CharacterBody2D" unique_id=1128937683]
+position = Vector2(-8, 7.4299927)
+polygon = PackedVector2Array(-32, -219.1, -32, -217.3, -34, -216.2, -34, 232, 29, 232, 29, -216.9)
+
+[node name="Spinny" type="Sprite2D" parent="CharacterBody2D" unique_id=1082940939]
+position = Vector2(-8, 7.4299927)
 texture = ExtResource("5_7mycd")
 centered = false
 offset = Vector2(-180, -250)
 script = ExtResource("6_272bh")
+
+[node name="Label" type="Label" parent="." unique_id=795693811]
+offset_left = 4821.0
+offset_top = 193.0
+offset_right = 5395.0
+offset_bottom = 281.0
+theme_override_font_sizes/font_size = 64
+text = "YOU WINNNN!!!!!!!!"
