@@ -9,7 +9,7 @@ const BIG: float=50
 const SMALL : float = 32
 const PUSH_STRENGTH : float = 10
 const ENERGY_BONUS : float = 0.004
-const MAX_ENERGY : float = 300
+const MAX_ENERGY : float = 1000
 const FRICTION: float = 150
 const DRIFT : float = 150
 
