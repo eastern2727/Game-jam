@@ -30,6 +30,8 @@ size = Vector2(769.5, 53.5)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fcnqv"]
 size = Vector2(212, 20)
 
+[sub_resource type="Theme" id="Theme_6kesf"]
+
 [node name="Node2D" type="Node2D" unique_id=2011774588]
 
 [node name="Hammer" type="Sprite2D" parent="." unique_id=1725210622]
@@ -112,3 +114,36 @@ offset_right = 225.0
 offset_bottom = 106.0
 text = "Restart"
 script = ExtResource("11_efxa6")
+
+[node name="Label" type="Label" parent="." unique_id=1322820027]
+offset_left = 459.0
+offset_top = 149.0
+offset_right = 981.0
+offset_bottom = 254.0
+theme = SubResource("Theme_6kesf")
+theme_override_font_sizes/font_size = 37
+text = "A + D to move
+(Or Left and Right arrow keys"
+
+[node name="Label" type="Label" parent="Label" unique_id=1924095896]
+layout_mode = 0
+offset_left = 911.0
+offset_top = 34.0
+offset_right = 1611.0
+offset_bottom = 193.0
+theme = SubResource("Theme_6kesf")
+theme_override_font_sizes/font_size = 37
+text = "You can't jump...
+But you can compress and uncompress
+(Space"
+
+[node name="Label" type="Label" parent="Label/Label" unique_id=543525851]
+layout_mode = 0
+offset_left = 820.0
+offset_top = 253.0
+offset_right = 1520.0
+offset_bottom = 358.0
+theme = SubResource("Theme_6kesf")
+theme_override_font_sizes/font_size = 37
+text = "You can store potential energy
+In order to jump higher"
