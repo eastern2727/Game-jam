@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://c84bwl66ldmj2" path="res://pixil-frame-0 (10).png" id="7_5vw27"]
 [ext_resource type="Script" uid="uid://brq1wcscmx1ql" path="res://floating_platform_h.gd" id="7_272bh"]
 [ext_resource type="Script" uid="uid://dk2dqec6gnfyc" path="res://floating_platform_v.gd" id="9_kek77"]
+[ext_resource type="Script" uid="uid://dkd7ilwcxwm5y" path="res://restart.gd" id="11_efxa6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
 size = Vector2(1743, 157)
