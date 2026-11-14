@@ -9,7 +9,6 @@ var timer2: Timer = Timer.new()
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	startingPosX = startingPosX
 	add_child(timer)
 	timer.wait_time = 1
 	timer.one_shot = true
@@ -32,7 +31,6 @@ func _process(delta: float) -> void:
 			position.x = move_toward(position.x, startingPosX, delta*100)
 			if (position.x<startingPosX+0.05 && timer.time_left == 0):
 				timer.start()
-		print(timer.time_left)
 func _on_timeout():
 	lock = false
 	pass
