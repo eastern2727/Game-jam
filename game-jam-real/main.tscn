@@ -11,6 +11,7 @@
 [ext_resource type="Script" uid="uid://brq1wcscmx1ql" path="res://floating_platform_h.gd" id="7_272bh"]
 [ext_resource type="Script" uid="uid://dhbgaae6tabvg" path="res://character_body_2d.gd" id="9_efxa6"]
 [ext_resource type="Script" uid="uid://dk2dqec6gnfyc" path="res://floating_platform_v.gd" id="9_kek77"]
+[ext_resource type="Script" uid="uid://dkd7ilwcxwm5y" path="res://restart.gd" id="11_efxa6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
 size = Vector2(1743, 157)
@@ -37,6 +38,9 @@ size = Vector2(1142.25, 26)
 size = Vector2(76, 349.25)
 
 [sub_resource type="Theme" id="Theme_6kesf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6kesf"]
+size = Vector2(1487, 657.75)
 
 [node name="Node2D" type="Node2D" unique_id=2011774588]
 
@@ -162,6 +166,63 @@ offset_right = 40.0
 offset_bottom = 187.0
 metadata/_edit_use_anchors_ = true
 
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="StaticBody2D" unique_id=1046377415]
+position = Vector2(3986.875, 331)
+shape = SubResource("RectangleShape2D_7numd")
+
+[node name="ColorRect" type="ColorRect" parent="StaticBody2D/CollisionShape2D8" unique_id=898868227]
+offset_left = -576.875
+offset_top = -12.0
+offset_right = 567.125
+offset_bottom = 28.0
+
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="StaticBody2D" unique_id=443374073]
+position = Vector2(4517, 159)
+shape = SubResource("RectangleShape2D_p1u0y")
+
+[node name="ColorRect" type="ColorRect" parent="StaticBody2D/CollisionShape2D9" unique_id=2036105170]
+offset_left = -37.0
+offset_top = -183.0
+offset_right = 39.0
+offset_bottom = 173.0
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D11" type="CollisionShape2D" parent="StaticBody2D" unique_id=586057306]
+position = Vector2(5239, -197)
+shape = SubResource("RectangleShape2D_p1u0y")
+
+[node name="ColorRect" type="ColorRect" parent="StaticBody2D/CollisionShape2D11" unique_id=1920859412]
+offset_left = -37.0
+offset_top = -183.0
+offset_right = 39.0
+offset_bottom = 173.0
+metadata/_edit_use_anchors_ = true
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=11917299]
+position = Vector2(4455, 524)
+script = ExtResource("9_efxa6")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CharacterBody2D" unique_id=1128937683]
+position = Vector2(-8, 7.4299927)
+polygon = PackedVector2Array(-32, -219.1, -32, -217.3, -34, -216.2, -34, 232, 29, 232, 29, -216.9)
+
+[node name="Spinny" type="Sprite2D" parent="CharacterBody2D" unique_id=1082940939]
+position = Vector2(-8, 7.4299927)
+texture = ExtResource("5_7mycd")
+centered = false
+offset = Vector2(-180, -250)
+script = ExtResource("6_272bh")
+
+[node name="WinLabel" type="Label" parent="." unique_id=795693811]
+offset_left = 4821.0
+offset_top = 193.0
+offset_right = 5395.0
+offset_bottom = 281.0
+theme_override_font_sizes/font_size = 64
+text = "YOU WINNNN!!!!!!!!"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1544356192]
+
 [node name="Restart" type="Button" parent="CanvasLayer" unique_id=48433486]
 offset_left = 56.0
 offset_top = 12.0
@@ -190,7 +251,7 @@ theme = SubResource("Theme_6kesf")
 theme_override_font_sizes/font_size = 37
 text = "You can't jump...
 But you can compress and uncompress
-(Space"
+(Space)"
 
 [node name="Label" type="Label" parent="Label/Label" unique_id=543525851]
 layout_mode = 0
@@ -202,3 +263,11 @@ theme = SubResource("Theme_6kesf")
 theme_override_font_sizes/font_size = 37
 text = "You can store potential energy
 In order to jump higher"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=323435558]
+position = Vector2(4861, -318.875)
+shape = SubResource("RectangleShape2D_6kesf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionShape2D" unique_id=1360681288]
+position = Vector2(1336, 414.875)
+shape = SubResource("RectangleShape2D_6kesf")
