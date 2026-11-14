@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://d3gcteqirkqu0"]
+
+[ext_resource type="Texture2D" uid="uid://dddd07n2n30fd" path="res://icon.svg" id="1_4flbx"]
+[ext_resource type="Script" uid="uid://1oiws6y547ln" path="res://player.gd" id="1_onrkg"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6kesf"]
+radius = 70.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jk4vh"]
+radius = 55.0
+
+[node name="Player" type="CharacterBody2D" unique_id=681009790]
+script = ExtResource("1_onrkg")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1499823529]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_4flbx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1806619319]
+shape = SubResource("CircleShape2D_6kesf")
+
+[node name="Label" type="Label" parent="." unique_id=291134337]
+offset_left = 72.0
+offset_top = -82.0
+offset_right = 97.0
+offset_bottom = -59.0
+text = "0"
+
+[node name="bounceArea" type="Area2D" parent="." unique_id=612017524]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bounceArea" unique_id=33963648]
+shape = SubResource("CircleShape2D_jk4vh")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1005042050]
+
+[node name="Node2D" type="Node2D" parent="." unique_id=892375693]
