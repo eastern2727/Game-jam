@@ -78,3 +78,6 @@ func puff_up():
 	velocity += push * PUSH_STRENGTH * (1 + energy * ENERGY_BONUS)
 	#boii
 	energy = 0
+func get_hit(force : Vector2):
+	velocity += force
+	energy = min(energy + force.length() * 0.5, MAX_ENERGY)
