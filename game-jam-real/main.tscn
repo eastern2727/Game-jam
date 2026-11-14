@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://2kweohlmgf7r" path="res://spinny.gd" id="6_272bh"]
 [ext_resource type="Texture2D" uid="uid://c84bwl66ldmj2" path="res://pixil-frame-0 (10).png" id="7_5vw27"]
 [ext_resource type="Script" uid="uid://brq1wcscmx1ql" path="res://floating_platform_h.gd" id="7_272bh"]
+[ext_resource type="Script" uid="uid://dk2dqec6gnfyc" path="res://floating_platform_v.gd" id="9_kek77"]
 
 [node name="Node2D" type="Node2D" unique_id=2011774588]
 
@@ -36,3 +37,8 @@ script = ExtResource("6_272bh")
 position = Vector2(250, 592)
 texture = ExtResource("7_5vw27")
 script = ExtResource("7_272bh")
+
+[node name="FloatingPlatformV" type="Sprite2D" parent="." unique_id=1076781233]
+position = Vector2(238, 149)
+texture = ExtResource("7_5vw27")
+script = ExtResource("9_kek77")
