@@ -9,6 +9,7 @@ const BIG : float = 50
 const SMALL : float = 32
 const PUSH_STRENGTH : float = 10
 const ENERGY_BONUS : float = 0.004
+const IMPACT_ENERGY : float = 0.6
 const MAX_ENERGY : float = 1000
 const FRICTION: float = 150
 const DRIFT : float = 150
@@ -48,10 +49,11 @@ func _physics_process(delta : float):
 	move_and_slide()
 
 	for i in get_slide_collision_count():
-		var surface : Vector2 = get_slide_collision(i).get_normal()
-		var hit_strength = -speed_before_hit.dot(surface)
+		var hit = get_slide_collision(i)
+		var relative_speed = speed_before_hit - hit.get_collider_velocity()
+		var hit_strength = -relative_speed.dot(hit.get_normal())
 		if hit_strength >= HARD_HIT:
-			energy += (hit_strength - HARD_HIT)
+			energy += (hit_strength - HARD_HIT) * IMPACT_ENERGY
 	energy = min(energy, MAX_ENERGY)
 
 	if Input.is_action_just_released("compress"):
