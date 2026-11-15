@@ -1,12 +1,6 @@
-extends Sprite2D
-var rotationSpeed: float = 0.75
+extends AnimatableBody2D
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
+@export var spin_speed : float = 6
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	#rotate(deg_to_rad(rotationSpeed))
-	pass
+func _physics_process(delta):
+	rotation += spin_speed * delta

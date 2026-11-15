@@ -1,0 +1,29 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://power_hammer.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://cmkntw8sqm3qt" path="res://pixil-frame-0 (7).png" id="2"]
+[ext_resource type="Script" path="res://hitbox.gd" id="3"]
+
+[sub_resource type="RectangleShape2D" id="body"]
+size = Vector2(95, 260)
+
+[sub_resource type="RectangleShape2D" id="hit"]
+size = Vector2(115, 280)
+
+[node name="PowerHammer" type="AnimatableBody2D"]
+script = ExtResource("1")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(5, 5)
+texture = ExtResource("2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-7.5, -45)
+shape = SubResource("body")
+
+[node name="Hitbox" type="Area2D" parent="."]
+position = Vector2(-7.5, -45)
+script = ExtResource("3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+shape = SubResource("hit")
