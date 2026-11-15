@@ -7,7 +7,6 @@ var secondLock: bool = false
 var timer: Timer = Timer.new()
 var timer2: Timer = Timer.new()
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	add_child(timer)
 	timer.wait_time = 1
@@ -18,7 +17,6 @@ func _ready() -> void:
 	timer2.one_shot = true
 	timer2.timeout.connect(_on_timeout2)
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if (position.x <targetPosX-0.05 && !lock):
 		position.x = move_toward(position.x, targetPosX, delta*100)
