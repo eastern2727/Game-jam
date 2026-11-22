@@ -1,6 +1,7 @@
-extends Sprite2D
-var targetPosX = 800
-var startingPosX = 200
+extends AnimatableBody2D
+
+var targetPosX: float 
+var startingPosX: float
 var lock: bool = false
 var firstLock: bool = false
 var secondLock: bool = false
@@ -12,14 +13,15 @@ func _ready() -> void:
 	timer.wait_time = 1
 	timer.one_shot = true
 	timer.timeout.connect(_on_timeout)
+	
 	add_child(timer2)
 	timer2.wait_time = 1
 	timer2.one_shot = true
 	timer2.timeout.connect(_on_timeout2)
 
 func _process(delta: float) -> void:
-	if (position.x <targetPosX-0.05 && !lock):
-		position.x = move_toward(position.x, targetPosX, delta*100)
+	if (position.x < targetPosX - 0.05 && !lock):
+		position.x = move_toward(position.x, targetPosX, delta * 100)
 	else:
 		if (!lock):
 			timer2.start()
@@ -29,8 +31,8 @@ func _process(delta: float) -> void:
 			position.x = move_toward(position.x, startingPosX, delta*100)
 			if (position.x<startingPosX+0.05 && timer.time_left == 0):
 				timer.start()
-func _on_timeout():
+				
+func _on_timeout() -> void:
 	lock = false
-	pass
-func _on_timeout2():
+func _on_timeout2() -> void:
 	pass
